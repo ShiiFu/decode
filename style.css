@@ -1,0 +1,9 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css");
+
+.top-buffer {
+	margin-top: 20px;
+}
+
+.thumbnail {
+	overflow-wrap: break-word;
+}

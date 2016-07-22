@@ -1,0 +1,35 @@
+<!doctype html>
+<html ng-app="app">
+	<head>
+		<title>Decode - ShiiFu</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.0/ui-bootstrap.min.js"></script>
+		<script src="app.js"></script>
+		<script src="filter.js"></script>
+		<script src="function.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div ng-controller="Decode" class="container-fluid">
+			<h2>Simple way to decode or encode something</h2>
+			<div class="row top-buffer">
+				<div class="col-md-8">
+					<textarea ng-model="message" placeholder="Message" class="form-control box-shadow" rows="4" autofocus></textarea>
+				</div>
+				<div class="col-md-4">
+					<button ng-repeat="(name, code) in codes" ng-click="setType(name)" class="btn" ng-class="type == name ? 'btn-success' : 'btn-default'">{{ name }}</button>
+				</div>
+			</div>
+			<div class="row top-buffer">
+				<div ng-repeat="(name, code) in codes" ng-show="type != name" class="col-md-3">
+					<div class="thumbnail">
+						<h3>{{ name }}</h4>
+						<p>
+							{{ message | decode:type:name:codes }}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

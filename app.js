@@ -49,6 +49,12 @@ angular.module('app', ['app.filter', 'ui.bootstrap'])
 			],
 			example: '-- . ... ... .- --. .',
 		},
+		'Shadok': {
+			steps: [
+				'Binary',
+			],
+			example: 'BUGAMEUBU BUZOBUBU BUMEUGAMEU BUMEUGAMEU BUZOGABU BUZOBUMEU BUZOBUBU',
+		},
 	};
 
 	// active type

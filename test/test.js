@@ -63,4 +63,14 @@ describe('Converter', function() {
 		assert.equal(result, "message");
 	});
 
+	it('BinaryToShadok', function() {
+		var result = converter['BinaryToShadok']("1001101 1100101 1110011 1110011 1100001 1100111 1100101");
+		assert.equal(result, "BUGAMEUBU BUZOBUBU BUMEUGAMEU BUMEUGAMEU BUZOGABU BUZOBUMEU BUZOBUBU");
+	});
+
+	it('ShadokToBinary', function() {
+		var result = converter['ShadokToBinary']("BUGAMEUBU BUZOBUBU BUMEUGAMEU BUMEUGAMEU BUZOGABU BUZOBUMEU BUZOBUBU");
+		assert.equal(result, "1001101 1100101 1110011 1110011 1100001 1100111 1100101");
+	});
+
 });

@@ -104,3 +104,39 @@ converter['MorseToAscii'] = function(input) {
 		}
 		return output;
 	};
+	
+converter['BinaryToShadok'] = function(input) {
+		shadokCode = ['GA', 'BU', 'ZO', 'MEU'];
+		input = convertBaseList(2, 4, input);
+		output = "";
+		input = input.split(" ");
+		for (i=0; i < input.length; i++) {
+			for (j=0; j < input[i].length; j++) {
+				output += shadokCode[input[i][j]];
+			}
+			output += " ";
+		}
+		output = output.slice(0, -1);
+		return output;
+	};
+
+converter['ShadokToBinary'] = function(input) {
+		ShadokCode = {"GA": "0", "BU": "1", "ZO": "2", "MEU": "3"};
+		output = '';
+		input = input.split(" ");
+		for (j=0; j < input.length; j++) {
+			for (i=0; i < input[j].length; i++) {
+				if (input[j][i] == 'G' || input[j][i] == 'B' || input[j][i] == 'Z') {
+					output += ShadokCode[input[j][i] + input[j][i+1]];
+					i++;
+				}
+				else if (input[j][i] == 'M') {
+					output += ShadokCode[input[j][i] + input[j][i+1] + input[j][i+2]];
+					i += 2;
+				}
+			}
+			output += " ";
+		}
+		output = output.slice(0, -1);
+		return convertBaseList(4, 2, output);
+	};

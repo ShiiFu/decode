@@ -1,7 +1,8 @@
 {
   "devDependencies": {
     "chai": "3.5.0",
-    "mocha": "2.5.3"
+    "mocha": "2.5.3",
+    "jsdom": "9.4.1"
   },
   "scripts": {
     "test": "mocha"

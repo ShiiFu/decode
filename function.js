@@ -59,6 +59,7 @@ converter['AsciiToMorse'] = function(input) {
 				output += morseObj[letter] + ' ';
 			}
 		}
+		output = output.slice(0, -1);
 		return output;
 	};
 

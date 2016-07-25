@@ -46,6 +46,22 @@ converter['AsciiToBase64'] = function(input) {
 		return window.btoa(input);
 	};
 
+converter['AsciiToMorse'] = function(input) {
+		morseCode = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."];
+		morseObj = {};
+		for (i = 97, l = 97 + morseCode.length; i < l; i++) {
+			morseObj[String.fromCharCode(i)] = morseCode[i - 97];
+		}
+		output = '';
+		for (i = 0, l = input.length; i < l; i++) {
+			letter = input[i].toLowerCase();
+			if (morseObj[letter]) {
+				output += morseObj[letter] + ' ';
+			}
+		}
+		return output;
+	};
+
 converter['DecimalToBinary'] = function(input) {
 		return convertBaseList(10, 2, input);
 	};
@@ -74,4 +90,16 @@ converter['HexadecimalToBinary'] = function(input) {
 
 converter['Base64ToAscii'] = function(input) {
 		return window.atob(input);
+	};
+
+converter['MorseToAscii'] = function(input) {
+		morseCode = {".-": "a", "-...": "b", "-.-.": "c", "-..": "d", ".": "e", "..-.": "f", "--.": "g", "....": "h", "..": "i", ".---": "j", "-.-": "k", ".-..": "l", "--": "m", "-.": "n", "---": "o", ".--.": "p", "--.-": "q", ".-.": "r", "...": "s", "-": "t", "..-": "u", "...-": "v", ".--": "w", "-..-": "x", "-.--": "y", "--..": "z", "-----": "0", ".----": "1", "..---": "2", "...--": "3", "....-": "4", ".....": "5", "-....": "6", "--...": "7", "---..": "8", "----.": "9"};
+		output = '';
+		input = input.split(" ");
+		for (i=0; i < input.length; i++) {
+			if (morseCode[input[i]]) {
+				output += morseCode[input[i]];
+			}
+		}
+		return output;
 	};

@@ -36,6 +36,12 @@ angular.module('app', ['app.filter', 'ui.bootstrap'])
 				'Binary',
 			]
 		},
+		'Morse': {
+			steps: [
+				'Ascii',
+				'Binary',
+			]
+		},
 	};
 
 	// active type

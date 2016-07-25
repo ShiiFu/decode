@@ -11,7 +11,12 @@
 	</head>
 	<body>
 		<div ng-controller="Decode" class="container-fluid">
-			<h2>Simple way to decode or encode something</h2>
+			<div class="row">
+				<h2 class="col-md-11">Simple way to decode or encode something</h2>
+				<div class="col-md-1 media">
+					<a href="https://github.com/ShiiFu/decode/tree/gh-pages"><img class="media-object media-middle" src="assets/GitHub-Mark-64px.png" /></a>
+				</div>
+			</div>
 			<div class="row top-buffer">
 				<div class="col-md-8">
 					<textarea ng-model="message" placeholder="Message" class="form-control box-shadow" rows="4" autofocus></textarea>

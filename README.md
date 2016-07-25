@@ -2,7 +2,8 @@
 
 # Decode
 
-Decode is a simple project to convert things from a code to another code.
+Decode is a simple project to convert things from a code to another code.  
+You can use it [here](https://shiifu.github.io/decode/)
 
 
 # Todo

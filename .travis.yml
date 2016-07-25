@@ -1,0 +1,7 @@
+branches:
+  only:
+    - gh-pages
+language: node_js
+node_js:
+ - "4.4.0"
+script: "npm run-script test"

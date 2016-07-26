@@ -3,6 +3,8 @@
 	<head>
 		<title>Decode - ShiiFu</title>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
+		<script src="libs/angular-flash.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.0/ui-bootstrap.min.js"></script>
 		<script src="app.js"></script>
 		<script src="filter.js"></script>
@@ -10,12 +12,15 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-		<div ng-controller="Decode" class="container-fluid">
+		<div id="controller" ng-controller="Decode" class="container-fluid">
 			<div class="row">
 				<h2 class="col-md-11">Simple way to decode or encode something</h2>
 				<div class="col-md-1 media">
 					<a href="https://github.com/ShiiFu/decode/tree/gh-pages"><img class="media-object media-middle" src="assets/GitHub-Mark-64px.png" /></a>
 				</div>
+			</div>
+			<div flash-alert active-class="in" class="alert fade">
+				<span class="alert-message">{{flash.message}}</span>
 			</div>
 			<div class="row top-buffer">
 				<div class="col-md-8">
@@ -28,13 +33,24 @@
 			<div class="row top-buffer">
 				<div ng-repeat="(name, code) in codes" ng-show="type != name" class="col-md-3">
 					<div class="thumbnail">
-						<h3>{{ name }}</h4>
-						<p>
+						<div class="row">
+							<h3 class="col-md-10">{{ name }}</h4>
+							<a class="copy col-md-2" data-clipboard-action="copy" data-clipboard-target="#{{name}}">
+								<img 
+									ng-init="img='assets/copy-icon-black.png'"
+									ng-mouseover="img='assets/copy-icon-grey.png'"
+									ng-mouseleave="img='assets/copy-icon-black.png'"
+									ng-src="{{img}}"
+								/>
+							</a>
+						</div>
+						<div id="{{name}}" class="scrollbar">
 							{{ message | decode:type:name:codes }}
-						</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<script src="script.js"></script>
 	</body>
 </html>

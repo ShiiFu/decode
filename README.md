@@ -10,6 +10,6 @@ You can use it [here](https://shiifu.github.io/decode/)
 
 - add unit test
 - verify message with type
-- copy to clipboard
 - specific base converter
+- group codes by categorie
 - add more and more codes ...

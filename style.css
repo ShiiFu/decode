@@ -1,9 +1,41 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css");
 
+h3
+{
+	margin-top:2px;
+}
+
+textarea {
+	resize: vertical;
+}
+
 .top-buffer {
 	margin-top: 20px;
 }
 
 .thumbnail {
 	word-wrap: break-word;
+}
+
+.scrollbar
+{
+	height: 80px;
+	overflow-y: auto;
+}
+
+.scrollbar::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #ffffff;
+}
+
+.scrollbar::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.scrollbar::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
 }

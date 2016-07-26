@@ -1,5 +1,11 @@
-angular.module('app', ['app.filter', 'ui.bootstrap'])
-.controller('Decode', function($scope) {
+var app = angular.module('app', ['app.filter', 'ui.bootstrap', 'angular-flash.service', 'angular-flash.flash-alert-directive']);
+
+app.config(function (flashProvider) {
+	flashProvider.errorClassnames.push('alert-danger');
+	flashProvider.successClassnames.push('alert-sucess');
+});
+
+app.controller('Decode', function($scope, $filter, flash) {
 	// list of supported codes
 	// 'Name': {
 	//		steps: [
@@ -62,5 +68,13 @@ angular.module('app', ['app.filter', 'ui.bootstrap'])
 
 	$scope.setType = function(name) {
 		$scope.type = name;
+	};
+
+	$scope.flashSuccess = function(message) {
+		flash.success = message;
+	};
+
+	$scope.flashError = function(message) {
+		flash.error = message;
 	};
 });

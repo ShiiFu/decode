@@ -148,3 +148,21 @@ converter['BinaryToOctal'] = function(input) {
 converter['OctalToBinary'] = function(input) {
 		return convertBaseList(8, 2, input);
 	};
+
+converter['AsciiToCharDec'] = function(input) {
+		output = '';
+		for (i=0; i<input.length; i++) {
+			output += input.charCodeAt(i) + " ";
+		}
+		output = output.slice(0, -1);
+		return output;
+	};
+
+converter['CharDecToAscii'] = function(input) {
+		output = '';
+		input = input.split(" ");
+		for (i=0; i<input.length; i++) {
+			output += String.fromCharCode(input[i]);
+		}
+		return output;
+	};

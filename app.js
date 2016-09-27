@@ -67,6 +67,13 @@ app.controller('Decode', function($scope, $filter, flash) {
 			],
 			exemple: '115 145 163 163 141 147 145',
 		},
+		'CharDec': {
+			steps : [
+				'Ascii',
+				'Binary',
+			],
+			example: '77 101 115 115 97 103 101',
+		},
 	};
 
 	// active type

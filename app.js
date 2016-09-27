@@ -74,6 +74,13 @@ app.controller('Decode', function($scope, $filter, flash) {
 			],
 			example: '77 101 115 115 97 103 101',
 		},
+		'URLEncode': {
+			steps : [
+				'Ascii',
+				'Binary',
+			],
+			example: '',
+		},
 	};
 
 	// active type

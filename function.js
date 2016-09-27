@@ -166,3 +166,11 @@ converter['CharDecToAscii'] = function(input) {
 		}
 		return output;
 	};
+
+converter['AsciiToURLEncode'] = function(input) {
+		return encodeURIComponent(input);
+	};
+
+converter['URLEncodeToAscii'] = function(input) {
+		return decodeURIComponent(input);
+	};

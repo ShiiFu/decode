@@ -140,3 +140,11 @@ converter['ShadokToBinary'] = function(input) {
 		output = output.slice(0, -1);
 		return convertBaseList(4, 2, output);
 	};
+
+converter['BinaryToOctal'] = function(input) {
+		return convertBaseList(2, 8, input);
+	};
+
+converter['OctalToBinary'] = function(input) {
+		return convertBaseList(8, 2, input);
+	};

@@ -61,6 +61,12 @@ app.controller('Decode', function($scope, $filter, flash) {
 			],
 			example: 'BUGAMEUBU BUZOBUBU BUMEUGAMEU BUMEUGAMEU BUZOGABU BUZOBUMEU BUZOBUBU',
 		},
+		'Octal': {
+			steps : [
+				'Binary',
+			],
+			exemple: '115 145 163 163 141 147 145',
+		},
 	};
 
 	// active type

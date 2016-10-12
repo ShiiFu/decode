@@ -79,7 +79,14 @@ app.controller('Decode', function($scope, $filter, flash) {
 				'Ascii',
 				'Binary',
 			],
-			example: '',
+			example: 'Message',
+		},
+		'ROT13': {
+			steps : [
+				'Ascii',
+				'Binary',
+			],
+			example: 'Zrffntr',
 		},
 	};
 

@@ -8,8 +8,11 @@ You can use it [here](https://shiifu.github.io/decode/)
 
 # Todo
 
-- add unit test
-- verify message with type
-- specific base converter
-- group codes by categorie
-- add more and more codes ...
+- Group codes by categorie
+- Add unit test
+- Support decoding of codes which use keys
+- Project presentation
+- SEO
+- Verify message with type
+- Specific base converter
+- Add more and more codes ...

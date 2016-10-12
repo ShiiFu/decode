@@ -38,9 +38,9 @@
 							<h3 class="col-md-10 col-xs-10">{{ name }}</h4>
 							<a class="copy col-md-2 col-xs-2" data-clipboard-action="copy" data-clipboard-target="#{{name}}">
 								<img 
-									uib-popover="Copy the result to clipboard"
-									popover-trigger="'mouseenter'"
-									popover-placement="right"
+									uib-tooltip="Copy the result to clipboard"
+									tooltip-trigger="'mouseenter'"
+									tooltip-placement="right"
 									ng-init="img='assets/copy-icon-black.png'"
 									ng-mouseover="img='assets/copy-icon-grey.png'"
 									ng-mouseleave="img='assets/copy-icon-black.png'"

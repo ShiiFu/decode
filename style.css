@@ -17,7 +17,7 @@ textarea {
 	word-wrap: break-word;
 }
 
-.popover {
+.tooltip {
 	white-space:nowrap;
 	max-width:none;
 }

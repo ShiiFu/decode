@@ -17,6 +17,11 @@ textarea {
 	word-wrap: break-word;
 }
 
+.popover {
+	white-space:nowrap;
+	max-width:none;
+}
+
 .scrollbar
 {
 	height: 80px;

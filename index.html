@@ -5,7 +5,7 @@
 		<script src="libs/angular.min.js"></script>
 		<script src="libs/clipboard.min.js"></script>
 		<script src="libs/angular-flash.min.js"></script>
-		<script src="libs/ui-bootstrap.min.js"></script>
+		<script src="libs/ui-bootstrap-tpls.min.js"></script>
 		<script src="app.js"></script>
 		<script src="filter.js"></script>
 		<script src="function.js"></script>
@@ -38,6 +38,9 @@
 							<h3 class="col-md-10 col-xs-10">{{ name }}</h4>
 							<a class="copy col-md-2 col-xs-2" data-clipboard-action="copy" data-clipboard-target="#{{name}}">
 								<img 
+									uib-popover="Copy the result to clipboard"
+									popover-trigger="'mouseenter'"
+									popover-placement="right"
 									ng-init="img='assets/copy-icon-black.png'"
 									ng-mouseover="img='assets/copy-icon-grey.png'"
 									ng-mouseleave="img='assets/copy-icon-black.png'"

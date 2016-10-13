@@ -11,36 +11,45 @@ app.controller('Decode', function($scope, $filter, flash) {
 	$scope.categories = {
 		'Common': {
 			parent: null,
+			firstChild: 'Character',
 		},
 		'Character': {
 			parent: 'Common',
+			firstChild: 'Ascii',
 		},
 		'Base': {
 			parent: 'Common',
+			firstChild: 'Binary',
 		},
 		'Web': {
 			parent: 'Common',
+			firstChild: 'URLEncode',
 		},
 		'Language': {
 			parent: null,
+			firstChild: 'Human',
 		},
 		'Human': {
 			parent: 'Language',
+			firstChild: 'Morse',
 		},
 		'Obfuscation': {
 			parent: 'Language',
+			firstChild: 'ROT13',
 		},
 	}
 	
 	$scope.selectedCategorie= 'Common';
 	$scope.setCategorie = function(name) {
 		$scope.selectedCategorie = name;
-		$scope.selectedSubCategorie = null;
+		$scope.selectedSubCategorie = $scope.categories[name].firstChild;
+		$scope.type = $scope.categories[$scope.selectedSubCategorie].firstChild;
 	};
 	
 	$scope.selectedSubCategorie= 'Character';
 	$scope.setSubCategorie = function(name) {
 		$scope.selectedSubCategorie = name;
+		$scope.type = $scope.categories[name].firstChild;
 	};
 	
 	// list of supported codes

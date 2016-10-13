@@ -11,6 +11,7 @@ You can use it [here](https://shiifu.github.io/decode/)
 - Group codes by categorie
 - Add unit test
 - Support decoding of codes which use keys
+- Documentation
 - Project presentation
 - SEO
 - Verify message with type

@@ -24,11 +24,17 @@
 				<span class="alert-message">{{flash.message}}</span>
 			</div>
 			<div class="row top-buffer">
-				<div class="col-md-8">
+				<div class="col-md-5">
 					<textarea ng-model="message" placeholder="Message" class="form-control box-shadow" rows="4" autofocus></textarea>
 				</div>
-				<div class="col-md-4">
-					<button ng-repeat="(name, code) in codes" ng-click="setType(name)" class="btn" ng-class="type == name ? 'btn-success' : 'btn-default'">{{ name }}</button>
+				<div class="col-md-2">
+					<button ng-repeat="(name, categorie) in categories" ng-show="!categorie.parent" ng-click="setCategorie(name)"  class="col-md-12 btn" ng-class="selectedCategorie == name ? 'btn-primary' : 'btn-default'">{{ name }}</button>
+				</div>
+				<div class="col-md-2">
+					<button ng-repeat="(name, categorie) in categories" ng-show="categorie.parent == selectedCategorie" ng-click="setSubCategorie(name)"  class="col-md-12 btn" ng-class="selectedSubCategorie == name ? 'btn-primary' : 'btn-default'">{{ name }}</button>
+				</div>
+				<div class="col-md-3">
+					<button ng-repeat="(name, code) in codes" ng-show="code.parent==selectedCategorie || code.parent==selectedSubCategorie" ng-click="setType(name)" class="btn" ng-class="type == name ? 'btn-success' : 'btn-default'">{{ name }}</button>
 				</div>
 			</div>
 			<div class="row top-buffer">

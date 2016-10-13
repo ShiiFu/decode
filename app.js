@@ -6,6 +6,43 @@ app.config(function (flashProvider) {
 });
 
 app.controller('Decode', function($scope, $filter, flash) {
+	// list of categories
+	//	Name : parent
+	$scope.categories = {
+		'Common': {
+			parent: null,
+		},
+		'Character': {
+			parent: 'Common',
+		},
+		'Base': {
+			parent: 'Common',
+		},
+		'Web': {
+			parent: 'Common',
+		},
+		'Language': {
+			parent: null,
+		},
+		'Human': {
+			parent: 'Language',
+		},
+		'Obfuscation': {
+			parent: 'Language',
+		},
+	}
+	
+	$scope.selectedCategorie= 'Common';
+	$scope.setCategorie = function(name) {
+		$scope.selectedCategorie = name;
+		$scope.selectedSubCategorie = null;
+	};
+	
+	$scope.selectedSubCategorie= 'Character';
+	$scope.setSubCategorie = function(name) {
+		$scope.selectedSubCategorie = name;
+	};
+	
 	// list of supported codes
 	// 'Name': {
 	//		steps: [
@@ -22,24 +59,28 @@ app.controller('Decode', function($scope, $filter, flash) {
 				'Binary',
 			],
 			example: 'Message',
+			parent: 'Character',
 		},
 		'Decimal': {
 			steps: [
 				'Binary',
 			],
 			example: '77 101 115 115 97 103 101',
+			parent: 'Base',
 		},
 		'Binary': {
 			steps: [
 				'Binary',
 			],
 			example: '1001101 1100101 1110011 1110011 1100001 1100111 1100101',
+			parent: 'Base',
 		},
 		'Hexadecimal': {
 			steps: [
 				'Binary',
 			],
 			example: '4d 65 73 73 61 67 65',
+			parent: 'Base',
 		},
 		'Base64': {
 			steps: [
@@ -47,6 +88,7 @@ app.controller('Decode', function($scope, $filter, flash) {
 				'Binary',
 			],
 			example: 'TWVzc2FnZQ==',
+			parent: 'Base',
 		},
 		'Morse': {
 			steps: [
@@ -54,18 +96,21 @@ app.controller('Decode', function($scope, $filter, flash) {
 				'Binary',
 			],
 			example: '-- . ... ... .- --. .',
+			parent: 'Human',
 		},
 		'Shadok': {
 			steps: [
 				'Binary',
 			],
 			example: 'BUGAMEUBU BUZOBUBU BUMEUGAMEU BUMEUGAMEU BUZOGABU BUZOBUMEU BUZOBUBU',
+			parent: 'Obfuscation',
 		},
 		'Octal': {
 			steps : [
 				'Binary',
 			],
 			exemple: '115 145 163 163 141 147 145',
+			parent: 'Base',
 		},
 		'CharDec': {
 			steps : [
@@ -73,6 +118,7 @@ app.controller('Decode', function($scope, $filter, flash) {
 				'Binary',
 			],
 			example: '77 101 115 115 97 103 101',
+			parent: 'Character',
 		},
 		'URLEncode': {
 			steps : [
@@ -80,6 +126,7 @@ app.controller('Decode', function($scope, $filter, flash) {
 				'Binary',
 			],
 			example: 'Message',
+			parent: 'Web',
 		},
 		'ROT13': {
 			steps : [
@@ -87,6 +134,7 @@ app.controller('Decode', function($scope, $filter, flash) {
 				'Binary',
 			],
 			example: 'Zrffntr',
+			parent: 'Obfuscation',
 		},
 	};
 

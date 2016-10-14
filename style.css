@@ -13,6 +13,10 @@ textarea {
 	margin-top: 20px;
 }
 
+.top-buffer-tiny {
+	margin-top: 2px;
+}
+
 .thumbnail {
 	word-wrap: break-word;
 }

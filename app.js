@@ -161,4 +161,6 @@ app.controller('Decode', function($scope, $filter, flash) {
 	$scope.flashError = function(message) {
 		flash.error = message;
 	};
+	
+	$scope.oneAccordionAtATime = true;
 });

@@ -37,8 +37,26 @@
 					<button ng-repeat="(name, code) in codes" ng-show="code.parent==selectedCategorie || code.parent==selectedSubCategorie" ng-click="setType(name)" class="col-md-6 btn" ng-class="type == name ? 'btn-success' : 'btn-default'">{{ name }}</button>
 				</div>
 			</div>
+			<hr />
 			<div class="row top-buffer">
-				<div ng-repeat="(name, code) in codes" ng-show="type != name" class="col-md-3">
+				<div class="col-md-6">
+					<div>
+						<h3>Select your results</h4>
+						<uib-accordion close-others="oneAccordionAtATime">
+							<div uib-accordion-group ng-repeat="(name, categorie) in categories" ng-show="!categorie.parent" class="panel-default" heading="{{name}}" >
+								<div ng-repeat="(nameSub, categorieSub) in categories" ng-if="categorieSub.parent == name" class="row top-buffer-tiny">
+									<div class="col-md-2">
+										{{ nameSub }}
+									</div> 
+									<div class="col-md-10 btn-group">
+										<label ng-repeat="(nameCode, code) in codes" ng-if="code.parent==name || code.parent==nameSub" class="btn btn-primary" ng-model="codes[nameCode].display" uib-btn-checkbox>{{ nameCode }}</label>
+									</div>
+								</div>
+							</div>
+						</uib-accordion>
+					</div>
+				</div>
+				<div ng-repeat="(name, code) in codes" ng-init="codes[name].display = true" ng-show="type != name && codes[name].display == true" class="col-md-3">
 					<div class="thumbnail">
 						<div class="row">
 							<h3 class="col-md-10 col-xs-10">{{ name }}</h4>
